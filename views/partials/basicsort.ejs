@@ -1,0 +1,31 @@
+<form class="ui form" action="/sort" method="POST">
+    <div class="ui two column centered grid">
+        <div class="two wide column">
+            <select class="ui dropdown" name="sortBy" id="sortBy">
+                <option value="">Sort By</option>
+                <option value="jobNumber">Job Number</option>
+                <option value="created">Date Created</option>
+                <option value="unit">Unit #</option>
+                <option value="lot">Lot #</option>
+                <option value="series">Series</option>
+                <option value="model">Model</option>
+                <option value="redFile">Red File</option>
+            </select>
+        </div>
+        <div class="two wide column">
+            <select class="ui dropdown" name="order" id="order">
+                <option value=0>Order</option>
+                <option value=1>Ascending</option>
+                <option value=-1>Descending</option>
+            </select>
+        </div>
+    </div>
+
+
+    <div class="ui centered">
+        <input class = "ui teal button" type = "submit" value="Sort Records">
+    </div>
+
+    </div>
+
+</form>
