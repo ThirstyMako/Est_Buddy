@@ -102,6 +102,21 @@ app.get('/', function(req, res){
     });
 });
 
+// SORT ROUTE
+app.post('/sort', function(req,res){
+    var sortOrder = req.body.order;
+    var sortParam = req.body.sortBy;
+    var sort = {};
+    sort[sortParam] = sortOrder;
+    Est.find({}).sort(sort).exec(function(err,ests){
+        if(err){
+            console.log(err);
+        } else {
+            res.render('index', {ests: ests});
+        }
+    });
+});
+
 // NEW ROUTE
 app.get('/est/new', middleware.isLoggedIn, function(req, res){
     res.render('new');
